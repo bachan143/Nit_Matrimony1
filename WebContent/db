@@ -1,0 +1,248 @@
+conn System/lit;
+drop user  mm cascade;
+create user  mm identified by mm;
+
+grant dba to mm;
+
+conn mm/mm;
+ 
+Create table Admin
+(
+    emailid 		varchar2(20),
+	password        varchar2(20)
+);
+
+insert into Admin values ('admin@gmail.com','admin');
+commit;
+
+
+Create table Users 
+(
+	emailid 		    varchar2(50) primary key,
+	password      	    varchar2(30),
+	name 		  	    varchar2(30),
+	gender       	    varchar2(30),
+	date_of_birth 	    varchar2(30),
+	religion		    varchar2(30),
+	mother_tounge       varchar2(30),
+	country             varchar2(30),
+	body           	    varchar2(30),
+	height 		        varchar2(8),
+	weight              varchar2(8),
+	address 		    varchar2(300),
+	photos	     	    varchar2(30),
+	occupation          varchar2(30),
+	salary              varchar2(30),
+	income              varchar2(30),
+	disability 		    varchar2(30),
+	about_me            varchar2(300),
+	highest_education   varchar2(30),
+	employed_in          varchar2(30),
+	college		        varchar2(30),
+	Age            	    varchar2(30),
+	martial_status 	    varchar2(30),
+	state			 	varchar2(30),
+	city			 	varchar2(30),
+	Additional_degree   varchar2(30),
+	Blood_group 		varchar2(30),
+	Complexion 			varchar2(30),
+	Diet 				varchar2(30),
+	language_known  	varchar2(30),
+	nationality  		varchar2(30)		
+);
+
+-----------------------------------------------------------------------
+Create table family
+(
+	emailid              varchar2(30) primary key,
+	family_type 		 varchar2(30),
+	family_status        varchar2(30),
+	family_values        varchar2(30),
+	father_status		 varchar2(30),
+	mother_status        varchar2(30),
+	brothers 		     varchar2(30),
+	sisters              varchar2(30),
+	family_location 	 varchar2(30),
+    favourite_cousion     varchar2(30),
+    ancestral_origin	 varchar2(30),
+	about_family 		 varchar2(30),
+	phone                varchar2(30),
+	education_details    varchar2(300),
+	occupation_details    varchar2(300),
+	eating_habit         varchar2(30),
+	drinking_habit		 varchar2(30),
+	smoking_habit        varchar2(30),
+	district		     varchar2(30),
+	state                varchar2(30)
+ );
+	 
+--------------------------------------------------------------------------------
+	 
+Create table horoscope
+(
+	 emailid         varchar2(30)  primary key,
+	 caste           varchar2(30),
+	 sub_caste 		 varchar2(30),
+	 dosh            varchar2(30),
+	 marryother_communities         varchar2(30),
+	 manglik         varchar2(30),
+	 gotra 		     varchar2(30),
+	 star            varchar2(30),
+	 rasi 		     varchar2(30),
+	 time_of_birth   varchar2(30),
+	 place_of_birth  varchar2(30)
+);
+	 
+--------------------------------------------------------------------------
+	 
+Create table match
+(
+	emailid 		  varchar2(30) primary key,
+	hobbies           varchar2(300),
+	interest 		  varchar2(300),
+	like_to_do        varchar2(30),
+	prefer_style      varchar2(30),
+	songs             varchar2(300),
+	movies 		      varchar2(300),
+	sports            varchar2(300),
+	fitness 		  varchar2(300),
+	what_in_partner   varchar2(30),
+	resident_state 	  varchar2(30),
+	citizenship       varchar2(30),
+	bride_age 		  varchar2(30),
+	groom_age         varchar2(30),
+	about_partner     varchar2(300),
+	language          varchar2(30)
+);
+	
+----------------------------------------------------------------------
+ 
+create table matrimony_mail
+(
+	sender varchar2(50),
+	receiver varchar2(50),
+	subject varchar2(50),
+	message varchar2(100),
+	msg_date varchar2(50),
+	name varchar2(50)
+);
+	----------------------------------------------------------------------
+
+
+create table matrimony_interest
+(
+	sender varchar2(50),
+	receiver varchar2(50),
+	name varchar2(50)
+);
+  
+	----------------------------------------------------------------------
+	
+
+create table ChatMessages 
+(
+	sender 		varchar2(50),
+	receiver 	varchar2(50),
+	message 	varchar2(500),
+	time 		timestamp,
+	status 		varchar2(1)
+);
+
+---------------------------------------------------------------------------
+
+create table ChatUsers
+(
+	name 		varchar2(50),
+	email 		varchar2(50),
+	password 	varchar2(10),
+	status 		varchar2(1)
+);
+					  
+	delete users;
+	delete family;
+	delete match;
+	delete Horoscope;
+	delete matrimony_mail;
+	delete matrimony_interest;
+	
+    insert into users values('dassangita075@gmail.com','rani','rani sharma','female','11-February-1988','Hindu','English','india','average','5.5','50','bbsr','profileimg\1.jpg','teacher','30000','monthly','not','i am  a simple girl','mca','private','cet','21','unmarried','odisha','bbsr','m-tech');
+	insert into users values('roni@gmail.com','roni','roni sharma','female','11-February-1989','Sikh','English','india','average','7.5','50','ctc','profileimg\2.jpg','teacher','40000','monthly','not','i am  a simple girl','mca','private','cet','31','unmarried','delhi','rkl','phd');
+ 	insert into users values('sania@gmail.com','saani','saani sharma','female','11-February-1987','Hindu','Odia','india','average','8.5','50','kjr','profileimg\3.jpg','teacher','50000','monthly','not','i am  a simple girl','mca','private','cet','41','unmarried','mumbai','kjr','no');
+  	insert into users values('tripi@gmail.com','tripi','tripi sharma','female','11-February-1986','Sikh','English','india','average','9.5','50','rkl','profileimg\4.jpg','teacher','60000','monthly','not','i am  a simple girl','mca','private','cet','51','unmarried','odisha','bdk','mca');				
+  	insert into users values('alina@gmail.com','alina','alina sharma','female','11-February-1985','Hindu','Hindi','india','average','4.5','50','bdk','profileimg\5.jpg','teacher','70000','monthly','not','i am  a simple girl','mca','private','cet','61','unmarried','assam','ctc','bsc');
+  
+  	insert into users values('ram@gmail.com','ram','ram sehgal','male','11-February-1998','Hindu','Odia','india','average','3.5','50','ctc','profileimg\11.jpg','teacher','60000','monthly','not','i am  a simple boy','mca','private','cet','81','unmarried','odisha','bbsr','mba');
+   	insert into users values('hari@gmail.com','hari','hari sehgal','male','11-February-1978','Hindu','English','india','average','2.5','50','rkl','profileimg\12.jpg','teacher','70000','monthly','not','i am  a simple boy','mca','private','cet','21','unmarried','delhi','ctc','m-tech');
+  	insert into users values('arya@gmail.com','arya','arya sehgal','male','11-February-1968','Sikh','Hindi','india','average','1.5','50','kjr','profileimg\13.jpg','teacher','90000','monthly','not','i am  a simple animal','mca','private','cet','41','unmarried','odisha','ctc','mba');
+   	insert into users values('syam@gmail.com','syam','syam sehgal','male','11-February-1958','Sikh','English','india','average','5.5','50','bbsr','profileimg\14.jpg','teacher','80000','monthly','not','i am  a simple boy','mca','private','cet','31','unmarried','assam','bbsr','mca');
+  	insert into users values('rian@gmail.com','rian','rian sehgal','male','11-February-1988','Hindu','English','india','average','8.5','50','bbsr','profileimg\15.jpg','teacher','40000','monthly','not','i am  a simple boy','mca','private','cet','51','unmarried','odisha','bbsr','m-tech');
+  
+  
+  insert into family values('dassangita075@gmail.com','joint','medium','no values','government officer','home maker','2','2','bbsr','uncle son','odisha','good','7437976783','after school i completed my mca.','teacher in bst','veg','no','no','khorda','Odisha');
+  insert into family values('roni@gmail.com','joint','medium','no values','government officer','home maker','2','2','bbsr','uncle son','odisha','good','7437976783','after school i completed my mca.','teacher in bst','veg','no','no','khorda','Odisha');
+  insert into family values('sania@gmail.com','joint','medium','no values','government officer','home maker','2','2','bbsr','uncle son','odisha','good','7437976783','after school i completed my mca.','teacher in bst','veg','no','no','khorda','Odisha');
+  insert into family values('tripi@gmail.com','joint','medium','no values','government officer','home maker','2','2','bbsr','uncle son','odisha','good','7437976783','after school i completed my mca.','teacher in bst','veg','no','no','khorda','Odisha');
+  insert into family values('alina@gmail.com','joint','medium','no values','government officer','home maker','2','2','bbsr','uncle son','odisha','good','7437976783','after school i completed my mca.','teacher in bst','veg','no','no','khorda','Odisha');
+
+  
+  insert into family values('ram@gmail.com','joint','medium','no values','government officer','home maker','2','2','bbsr','uncle son','odisha','good','7437976783','after school i completed my mca.','teacher in bst','veg','no','no','khorda','Odisha');
+  insert into family values('hari@gmail.com','joint','medium','no values','government officer','home maker','2','2','bbsr','uncle son','odisha','good','7437976783','after school i completed my mca.','teacher in bst','veg','no','no','khorda','Odisha');
+  insert into family values('arya@gmail.com','joint','medium','no values','government officer','home maker','2','2','bbsr','uncle son','odisha','good','7437976783','after school i completed my mca.','teacher in bst','veg','no','no','khorda','Odisha');
+  insert into family values('syam@gmail.com','joint','medium','no values','government officer','home maker','2','2','bbsr','uncle son','odisha','good','7437976783','after school i completed my mca.','teacher in bst','veg','no','no','khorda','Odisha');
+  insert into family values('rian@gmail.com','joint','medium','no values','government officer','home maker','2','2','bbsr','uncle son','odisha','good','7437976783','after school i completed my mca.','teacher in bst','veg','no','no','khorda','Odisha');
+  
+
+  insert into horoscope values('dassangita075@gmail.com','khyatriye','khandayat','yes','on','yes','nagasya','black moon','lion','10:10:25-pm','odisha');
+  insert into horoscope values('roni@gmail.com','khyatriye','khandayat','yes','on','yes','nagasya','black moon','lion','10:10:25-pm','odisha');
+  insert into horoscope values('sania@gmail.com','khyatriye','khandayat','yes','on','yes','nagasya','black moon','lion','10:10:25-pm','odisha');
+  insert into horoscope values('tripi@gmail.com','khyatriye','khandayat','yes','on','yes','nagasya','black moon','lion','10:10:25-pm','odisha');
+  insert into horoscope values('alina@gmail.com','khyatriye','khandayat','yes','on','yes','nagasya','black moon','lion','10:10:25-pm','odisha');
+  
+  
+  insert into horoscope values('ram@gmail.com','khyatriye','khandayat','yes','on','yes','nagasya','black moon','lion','10:10:25-pm','odisha');
+  insert into horoscope values('hari@gmail.com','khyatriye','khandayat','yes','on','yes','nagasya','black moon','lion','10:10:25-pm','odisha');
+  insert into horoscope values('arya@gmail.com','khyatriye','khandayat','yes','on','yes','nagasya','black moon','lion','10:10:25-pm','odisha');
+  insert into horoscope values('syam@gmail.com','khyatriye','khandayat','yes','on','yes','nagasya','black moon','lion','10:10:25-pm','odisha');
+  insert into horoscope values('rian@gmail.com','khyatriye','khandayat','yes','on','yes','nagasya','black moon','lion','10:10:25-pm','odisha');
+  
+
+  insert into match values('dassangita075@gmail.com','cricket','singing','cooking','traditional','bollywood','hollywood','football','running','nothing','odisha','indian','','20 to 40','simple','hindi');
+  insert into match values('roni@gmail.com','cricket','singing','cooking','traditional','bollywood','hollywood','football','running','nothing','odisha','indian','','20 to 40','simple','hindi');
+  insert into match values('sania@gmail.com','cricket','singing','cooking','traditional','bollywood','hollywood','football','running','nothing','odisha','indian','','20 to 40','simple','hindi');
+  insert into match values('tripi@gmail.com','cricket','singing','cooking','traditional','bollywood','hollywood','football','running','nothing','odisha','indian','','20 to 40','simple','hindi');
+  insert into match values('alina@gmail.com','cricket','singing','cooking','traditional','bollywood','hollywood','football','running','nothing','odisha','indian','','20 to 40','simple','hindi');
+  
+  
+  insert into match values('ram@gmail.com','cricket','singing','cooking','traditional','bollywood','hollywood','football','running','nothing','odisha','indian','20 to 40','','simple','hindi');
+  insert into match values('hari@gmail.com','cricket','singing','cooking','traditional','bollywood','hollywood','football','running','nothing','odisha','indian','20 to 40','','simple','hindi');
+  insert into match values('arya@gmail.com','cricket','singing','cooking','traditional','bollywood','hollywood','football','running','nothing','odisha','indian','20 to 40','','simple','hindi');
+  insert into match values('syam@gmail.com','cricket','singing','cooking','traditional','bollywood','hollywood','football','running','nothing','odisha','indian','20 to 40','','simple','hindi');
+  insert into match values('rian@gmail.com','cricket','singing','cooking','traditional','bollywood','hollywood','football','running','nothing','odisha','indian','20 to 40','','simple','hindi');
+  
+  
+  insert into Chatusers values('ram','ram@gmail.com','ram',null);
+  insert into Chatusers values('hari','hari@gmail.com','hari',null);
+  insert into Chatusers values('arya','arya@gmail.com','arya',null);
+  insert into Chatusers values('syam','syam@gmail.com','syam',null);
+  insert into Chatusers values('rian','rian@gmail.com','rian',null);
+  	
+  commit;
+      
+
+  
+ D:\Project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\mtm\profileimg
+  
+ 
+ Create table feedback
+(
+	emailid 		  varchar2(60) primary key,
+	name           varchar2(50),
+	subject		  varchar2(50),
+	feedback        varchar2(700)		
+);
+ 
+  
+  
+  
+  
+ 
